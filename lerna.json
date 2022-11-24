@@ -6,7 +6,7 @@
   "registry": "http://localhost:4873/",
   "command": {
     "publish": {
-      "allowBranch": ["release"],
+      "allowBranch": ["main", "release"],
       "conventionalCommits": true,
       "message": "chore(release): publish"
     }
