@@ -1,0 +1,6 @@
+61 warn complete Waiting for 2 child processes to exit. CTRL-C to exit immediately.
+62 error Error: Command failed with exit code 128: git tag docs@0.1.0 -m docs@0.1.0
+62 error fatal: tag 'docs@0.1.0' already exists
+62 error     at makeError (/Users/asimon/projects/bug-triage/my-turborepo/node_modules/.pnpm/execa@5.1.1/node_modules/execa/lib/error.js:60:11)
+62 error     at handlePromise (/Users/asimon/projects/bug-triage/my-turborepo/node_modules/.pnpm/execa@5.1.1/node_modules/execa/index.js:118:26)
+62 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
