@@ -7,14 +7,18 @@ if (!stdout.includes('chore(release): publish')) {
   throw new Error('Latest commit is not a release commit');
 }
 
-const releaseTagRegex = /@getgo\/chameleon-.*/g;
+const releaseTagRegex = /[A-Za-z].*@.*/g;
 
 const tagsFound = stdout.match(releaseTagRegex);
 
-for (const tag in tagsFound) {
+tagsFound.splice(0, 1);
+
+for (const tag of tagsFound) {
   console.log(`Processing tag: ${tag}`);
 
-  console.log(`Deleting ${tag} from release branch.`);
+  console.log(`Deleting ${tag} from local branch.`);
+  gitOperation(['tag', '-d', tag]);
+  console.log(`Deleting ${tag} from remote.`);
   gitOperation(['push', '--delete', 'origin', tag]);
   console.log(`Tagging master branch`);
   gitOperation(['tag', tag, '-m', `'${tag}'`]);
