@@ -11,7 +11,8 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "publish": "lerna publish --yes --no-changelog"
+    "version": "lerna version --yes --no-changelog",
+    "publish": "lerna publish from-package"
   },
   "devDependencies": {
     "@changesets/cli": "^2.25.2",
